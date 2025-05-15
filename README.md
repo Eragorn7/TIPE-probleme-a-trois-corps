@@ -7,4 +7,4 @@ Si possible, on pourra tenter de lier cette étude à des éphémérides (systè
 
 ## Premier objectif
 
-Le premier objectif est d'abord de modéliser avec Python le mouvement d'une planète sous l'actiond d'une force gravitationelle exercée par une étoile.
+Le premier objectif est d'abord de modéliser avec Python le mouvement d'une planète sous l'action d'une force gravitationelle exercée par une étoile.
