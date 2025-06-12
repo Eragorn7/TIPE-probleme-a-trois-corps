@@ -3,6 +3,7 @@
 from math import *
 import matplotlib.pyplot as plt
 import numpy as np
+import time
 
 
 # coordonnées polaires
@@ -19,11 +20,23 @@ x0, y0 = R/sqrt(2) + R, R/sqrt(2) + R/2
 Lt = np.array([i/2 for i in range(28)])
 Lx = []
 Ly = []
-
+plt.figure()
 for k in range(len(Lt)) :
-    Lx.append(R * cos((omega0 * Lt[k])) + x0)
-    Ly.append(R * sin((omega0 * Lt[k])) + y0)
+    x = R * cos((omega0 * Lt[k])) + x0
+    y = R * sin((omega0 * Lt[k])) + y0
+    Lx.append(x)
+    Ly.append(y)
+    plt.plot(Lx, Ly,'b+')
+    plt.show()
+    plt.pause(1)
 
-plt.plot(Ly, Lx, '+')
+"""
+
 plt.legend("distances en km")
 plt.title("Mouvement d'une planète en rotation autour d'une étoile")
+
+"""
+
+
+    
+
