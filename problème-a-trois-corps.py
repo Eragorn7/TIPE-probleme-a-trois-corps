@@ -1,12 +1,13 @@
 # importation des modules 
 from scipy.integrate import odeint
-import maths
+from math import *
 import matplotlib.pyplot as plt
+import numpy as np
 
 # initialisation des variables globales
 x0, y0 = 0.5*1.5e8, 0
 vx0, vy0 = 0,0
-init = [x0, vx0, y0, vy0]
+init = [x0, y0, vx0, vy0]
 G = 6.7e-11
 m_1 = 2e30
 m_2 = 6e24
@@ -34,7 +35,7 @@ def eq(x,y,vx,vy):
 
 #obtention de la trajectoire dans le referentiel tournant
 def trajectoire() :
-""" version sans odeint
+  """ version sans odeint
   liste_x = [x0]
   liste_y = [y0]
   liste_vx = [vx0]
@@ -48,7 +49,7 @@ def trajectoire() :
       liste_vx.append(nvx)
       liste_vy.append(nvy)
 
-"""
+  """
   traj = odeint(eq, init, temps)
   liste_x = traj[1][0]
   liste_y = traj[1][2]
