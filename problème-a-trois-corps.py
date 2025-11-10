@@ -34,9 +34,21 @@ def eq(x,y,vx,vy):
 
 #obtention de la trajectoire dans le referentiel tournant
 def trajectoire() :
+""" version sans odeint
+  liste_x = [x0]
+  liste_y = [y0]
+  liste_vx = [vx0]
+  liste_vy = [vy0]
+    
+  n = len(temps)
+  for i in range(n) :
+      nx, ny, nvx, nvy = eq(liste_x[-1], liste_y[-1], liste_vx[-1], liste_vy[-1])
+      liste_x.append(nx)
+      liste_y.append(ny)
+      liste_vx.append(nvx)
+      liste_vy.append(nvy)
 
-
-
+"""
   traj = odeint(eq, init, temps)
   liste_x = traj[1][0]
   liste_y = traj[1][2]
