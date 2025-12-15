@@ -24,7 +24,6 @@ omega = sqrt(1/(1-mu))
 
 tmax = 10
 N = 50
-dt = tmax/N
 temps = np.linspace(0, tmax, N)
 
 
