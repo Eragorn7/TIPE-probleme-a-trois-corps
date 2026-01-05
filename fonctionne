@@ -49,55 +49,55 @@ def Animation_Flot_2D(x0,px0,y0,py0,tmax,N,opt):
     
     global R
     
-    for k in range(N):
         
-        plt.axis([-R,R, -R, R]) # selectionne la vue
-        #plt.axis('equal') # pour avoir meme echelle en x,y
-        plt.xlabel('x')
-        plt.ylabel('y')
-        
-
-        
-        
-        if(opt == 'galileen'):
-            text = 'Trajectoire du pb 3 corps dans ref. GalilÃ©en'
-        else:
-            text = 'Trajectoire du pb 3 corps dans ref. tournant'
-        text += '\n nu='+ ('%4.3f'%nu)+ ', t='+ ('%4.2f'%t)
-        plt.title(text)  
-        
-        #-- dessin des etoiles
-        x2,y2= -nu,0
-        if(opt == 'galileen'):
-            x2,y2 =  x2*cos(t) - y2*sin(t), x2*sin(t) + y2*cos(t) # formule de rotation
-        plt.plot([x2],[y2], color = 'yellow', marker = 'o', linestyle = 'none') 
-        
-        
-        x2,y2= 1-nu,0
-        if(opt == 'galileen'):
-            x2,y2 =  x2*cos(t) - y2*sin(t), x2*sin(t) + y2*cos(t) # formule de rotation
-        plt.plot([x2],[y2], color = 'yellow', marker = 'o', linestyle = 'none') 
-        
+    plt.axis([-R,R, -R, R]) # selectionne la vue
+    #plt.axis('equal') # pour avoir meme echelle en x,y
+    plt.xlabel('x')
+    plt.ylabel('y')
 
 
-        #--dessin du corps 3
 
-        
-        
 
-    
-        Ty = odeint(V, [x0,px0,y0,py0], temps)
-        x = [Ty[1][0]]
-        y = [Ty[1][2]]
-        for k in range(len(Ty)) :
-            x.append(Ty[k][0])
-            y.append(Ty[k][2])
-            """
-        r = max(abs(x),abs(y))
-        if(r>R/1.1):
-            r=r*1.1
-            plt.axis([-r,r, -r, r]) # selectionne la vue
-            """
-        plt.plot(x, y, "b+")
-        
-        
+    if(opt == 'galileen'):
+        text = 'Trajectoire du pb 3 corps dans ref. GalilÃ©en'
+    else:
+        text = 'Trajectoire du pb 3 corps dans ref. tournant'
+    text += '\n nu='+ ('%4.3f'%nu)+ ', t='+ ('%4.2f'%t)
+    plt.title(text)  
+
+    #-- dessin des etoiles
+    x2,y2= -nu,0
+    if(opt == 'galileen'):
+        x2,y2 =  x2*cos(t) - y2*sin(t), x2*sin(t) + y2*cos(t) # formule de rotation
+    plt.plot([x2],[y2], color = 'yellow', marker = 'o', linestyle = 'none') 
+
+
+    x2,y2= 1-nu,0
+    if(opt == 'galileen'):
+        x2,y2 =  x2*cos(t) - y2*sin(t), x2*sin(t) + y2*cos(t) # formule de rotation
+    plt.plot([x2],[y2], color = 'yellow', marker = 'o', linestyle = 'none') 
+
+
+
+    #--dessin du corps 3
+
+
+
+
+
+    Ty = odeint(V, [x0,px0,y0,py0], temps)
+    x = [Ty[1][0]]
+    y = [Ty[1][2]]
+    for k in range(len(Ty)) :
+        x.append(Ty[k][0])
+        y.append(Ty[k][2])
+        """
+    r = max(abs(x),abs(y))
+    if(r>R/1.1):
+        r=r*1.1
+        plt.axis([-r,r, -r, r]) # selectionne la vue
+        """
+    print(x)
+    print(y)
+    plt.plot(x, y, "b+")
+
