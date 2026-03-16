@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Mar 16 15:39:18 2026
+
+@author: praymond
+"""
+
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import odeint
@@ -5,7 +12,7 @@ from scipy.integrate import odeint
 # -----------------------------
 # Paramètres du problème
 # -----------------------------
-mu = 0.2          # rapport de masse
+mu = 0.000003          # rapport de masse
 omega = 1.0       # vitesse angulaire normalisée
 
 # Positions des deux corps
@@ -38,7 +45,7 @@ def pr3c(state, t):
 # -----------------------------
 # Conditions initiales
 # -----------------------------
-x0, y0 = 0.5, 0.0
+x0, y0 = 1.01, 0.0
 vx0, vy0 = 0.0, 0.0
 state0 = [x0, y0, vx0, vy0]
 
