@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Éditeur de Spyder
-
-Ceci est un script temporaire.
-"""
-
 # importation des modules 
 from scipy.integrate import odeint
 from math import *
