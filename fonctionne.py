@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Nov 17 15:36:17 2025
-
-@author: praymond
-"""
-
 import numpy as np
 from scipy.integrate import odeint
 import matplotlib.pyplot as plt
